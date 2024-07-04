@@ -9,8 +9,8 @@ import SignupForm from './pages/SignupForm';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import auth from './utils/auth';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './index.css'; // Import the CSS file
-import '../src/components/custom.css'; // Import the custom CSS file
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
