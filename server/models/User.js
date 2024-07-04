@@ -1,7 +1,7 @@
 // server/models/User.js
 
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // Change this line to use bcryptjs
 
 const bookSchema = require('./Book');
 
@@ -29,7 +29,6 @@ userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
-    console.log(`Password hashed for user: ${this.email}`);
   }
 
   next();
@@ -37,9 +36,7 @@ userSchema.pre('save', async function (next) {
 
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
-  const isMatch = await bcrypt.compare(password, this.password);
-  console.log(`Password comparison for user ${this.email}: ${isMatch}`);
-  return isMatch;
+  return bcrypt.compare(password, this.password);
 };
 
 const User = mongoose.model('User', userSchema);
