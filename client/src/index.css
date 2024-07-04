@@ -28,7 +28,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 0 20px;
-    background-color: var(--bs-body-bg) !important; /* Ensure container uses the overridden background */
+    background-color: #001f3f !important; /* Matte navy blue background for container */
   }
   
   .row {
