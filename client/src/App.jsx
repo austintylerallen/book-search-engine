@@ -51,16 +51,16 @@ function App() {
                 <div className="row justify-content-center">
                   <div className="col-md-5">
                     <div className="card mb-4">
+                      <div className="card-header">Login</div>
                       <div className="card-body">
-                        <h2 className="text-center">Login</h2>
                         <LoginForm setLoggedIn={setLoggedIn} />
                       </div>
                     </div>
                   </div>
                   <div className="col-md-5">
                     <div className="card mb-4">
+                      <div className="card-header">Signup</div>
                       <div className="card-body">
-                        <h2 className="text-center">Signup</h2>
                         <SignupForm setLoggedIn={setLoggedIn} />
                       </div>
                     </div>

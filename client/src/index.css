@@ -1,13 +1,7 @@
-/* Override Bootstrap Variables */
-:root {
-    --bs-body-bg: #001f3f !important; /* Matte navy blue background */
-    --bs-body-color: #ffffff !important; /* White text color */
-  }
-  
-  /* General Styles */
-  body {
-    background-color: var(--bs-body-bg) !important; /* Use the overridden variable */
-    color: var(--bs-body-color) !important; /* Use the overridden variable */
+/* General Styles */
+body {
+    background-color: #001f3f !important; /* Matte navy blue background */
+    color: #ffffff !important; /* White text color */
     font-family: Arial, sans-serif; /* Ensure a fallback font family */
     margin: 0;
     padding: 0;
@@ -23,15 +17,11 @@
     color: #b7410e; /* Even darker orange links */
   }
   
-  h1 {
-    color: #ffcc00; /* Bright yellow for better visibility */
+  h1, h2, p {
+    color: #ffcc00 !important; /* Bright yellow for better visibility */
   }
   
-  h2, p {
-    color: #ffffff !important; /* White text color */
-  }
-  
-  .container-fluid {
+  .container-fluid, .container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,10 +35,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
   }
   
-  .col-md-5 {
+  .col-md-4, .col-md-5 {
     margin: 10px;
+    flex: 0 0 100%; /* Default to full width for smaller screens */
   }
   
   .navbar {
@@ -73,6 +65,10 @@
     margin-bottom: 20px !important;
     width: 100% !important; /* Ensuring the cards take up full width */
     max-width: 400px !important; /* Maximum width for the cards */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   
   .card-body {
@@ -81,6 +77,33 @@
     justify-content: center !important;
     align-items: center !important;
     height: 100% !important; /* Ensures cards are the same height */
+  }
+  
+  .card-header {
+    background-color: #d35400 !important; /* Dark matte orange */
+    color: #ffffff !important; /* White text */
+    width: 100% !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+    font-size: 1.5rem !important;
+  }
+  
+  /* Specific card text styles */
+  .card-text {
+    color: #333 !important; /* Dark grey text */
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Number of lines to display */
+    max-height: 4.5rem; /* Control the height */
+  }
+  
+  .card-text.expanded {
+    -webkit-line-clamp: unset; /* Reset line clamp for expanded text */
+    max-height: none; /* Remove max height for expanded text */
   }
   
   /* Form Styles */
@@ -113,5 +136,12 @@
   
   .btn-read-more:hover {
     color: #b7410e !important; /* Even darker orange */
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (min-width: 768px) {
+    .col-md-4, .col-md-5 {
+      flex: 0 0 48%; /* Adjust to half width for larger screens */
+    }
   }
   
