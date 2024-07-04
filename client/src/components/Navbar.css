@@ -1,0 +1,15 @@
+/* client/src/components/Navbar.css */
+
+.navbar {
+    background-color: #d35400; /* Dark matte orange */
+  }
+  
+  .navbar-brand, .nav-link {
+    color: #ffffff !important; /* White text */
+  }
+  
+  .nav-link:hover {
+    background-color: #b7410e !important; /* Even darker orange */
+    color: #ffffff !important; /* White text */
+  }
+  
