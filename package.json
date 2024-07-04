@@ -1,0 +1,14 @@
+{
+    "name": "root",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "client",
+      "server"
+    ],
+    "scripts": {
+      "start": "yarn workspace server start & yarn workspace client start",
+      "build": "yarn workspace client build"
+    }
+  }
+  
